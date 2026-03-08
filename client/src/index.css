@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Default container width (used only if you intentionally add .container) */
+:root { 
+  --container: 1100px; 
+}
+
+/* Reset + ensure full height */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  @apply text-gray-900 bg-gradient-to-b from-[#f9f9fb] via-[#f2f2f7] to-[#e7e9ff];
+}
+
+/* Override Tailwind's .container to prevent unwanted max-width behavior */
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0;
+}
+
+/* Smooth gradient backgrounds */
+.gradient-bg {
+  /* Soft Campus Hub Connect-style gradient */
+  @apply bg-gradient-to-b from-[#f9f9fb] via-[#f2f2f7] to-[#e7e9ff];
+}
+
+/* Accent gradients for buttons, headers, and cards */
+.gradient-primary {
+  @apply bg-gradient-to-br from-indigo-500 via-blue-500 to-purple-600;
+}
+
+/* Shadows and animations */
+.shadow-card { 
+  box-shadow: 0 6px 18px rgba(14,165,233,0.06); 
+}
+.shadow-glow { 
+  box-shadow: 0 8px 30px rgba(99,102,241,0.12); 
+}
+
+/* Animations */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up {
+  animation: slide-up 320ms cubic-bezier(.16,.84,.35,1) both;
+}
+
+@keyframes scale-in {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+.animate-scale {
+  animation: scale-in 260ms cubic-bezier(.16,.84,.35,1) both;
+}
+
+/* Text and muted colors */
+.text-muted { color: #6b7280; }
+
+/* Utility helpers */
+.full-width {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.2s ease-in-out;
+}
